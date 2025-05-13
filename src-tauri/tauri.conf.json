@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "ftb-quests-exporter",
+        "title": "FTB Quests Exporter",
         "width": 800,
         "height": 600
       }
