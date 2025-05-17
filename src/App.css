@@ -51,15 +51,6 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
 }
 
-.container {
-  margin: 0;
-  padding-top: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
 .row {
   display: flex;
   justify-content: center;
