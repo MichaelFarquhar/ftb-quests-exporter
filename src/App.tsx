@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   return (
     <main className="container">
-      <h1>Select file path</h1>
+      <h1 className="font-bold">Select file path</h1>
 
       <form
         className="row"
