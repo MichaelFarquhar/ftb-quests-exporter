@@ -1,5 +1,7 @@
 import { Container } from "@/layout/Container";
 import "./App.css";
+import { DirectorySelector } from "@/components/DirectorySelector";
+import { Alert } from "@/components/Alert";
 
 function App() {
   return (
@@ -18,7 +20,13 @@ function App() {
             onChange={(_) => console.log("clicked")}
             placeholder="Select path..."
           />
+          <DirectorySelector />
         </form>
+        <Alert
+          text="Please select the ftbquests directory from your minecraft world
+          folder."
+          variant="info"
+        />
       </div>
     </Container>
   );

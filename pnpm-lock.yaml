@@ -11,9 +11,15 @@ dependencies:
   '@tauri-apps/api':
     specifier: ^2
     version: 2.5.0
+  '@tauri-apps/plugin-dialog':
+    specifier: ~2
+    version: 2.2.1
   '@tauri-apps/plugin-opener':
     specifier: ^2
     version: 2.2.6
+  lucide-react:
+    specifier: ^0.511.0
+    version: 0.511.0(react@18.3.1)
   react:
     specifier: ^18.3.1
     version: 18.3.1
@@ -879,6 +885,12 @@ packages:
       '@tauri-apps/cli-win32-x64-msvc': 2.5.0
     dev: true
 
+  /@tauri-apps/plugin-dialog@2.2.1:
+    resolution: {integrity: sha512-wZmCouo4PgTosh/UoejPw9DPs6RllS5Pp3fuOV2JobCu36mR5AXU2MzU9NZiVaFi/5Zfc8RN0IhcZHnksJ1o8A==}
+    dependencies:
+      '@tauri-apps/api': 2.5.0
+    dev: false
+
   /@tauri-apps/plugin-opener@2.2.6:
     resolution: {integrity: sha512-bSdkuP71ZQRepPOn8BOEdBKYJQvl6+jb160QtJX/i2H9BF6ZySY/kYljh76N2Ne5fJMQRge7rlKoStYQY5Jq1w==}
     dependencies:
@@ -1222,6 +1234,14 @@ packages:
     dependencies:
       yallist: 3.1.1
     dev: true
+
+  /lucide-react@0.511.0(react@18.3.1):
+    resolution: {integrity: sha512-VK5a2ydJ7xm8GvBeKLS9mu1pVK6ucef9780JVUjw6bAjJL/QXnd4Y0p7SPeOUMC27YhzNCZvm5d/QX0Tp3rc0w==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    dependencies:
+      react: 18.3.1
+    dev: false
 
   /magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
