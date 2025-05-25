@@ -1,19 +1,9 @@
-import { useState } from "react";
-import { open } from "@tauri-apps/plugin-dialog";
+import { useDirectorySelector } from "@/hooks/useDirectorySelector";
 
 interface Props {}
 
 export const DirectorySelector = ({}: Props) => {
-  const [directory, setDirectory] = useState();
+  const { searchDirectory } = useDirectorySelector();
 
-  const selectDirectory = async () => {
-    const file: any = await open({
-      multiple: false,
-      directory: true,
-    });
-    setDirectory(file);
-    console.log(file);
-  };
-
-  return <button onClick={() => selectDirectory()}>Select Directory</button>;
+  return <button onClick={() => searchDirectory()}>Select Directory</button>;
 };

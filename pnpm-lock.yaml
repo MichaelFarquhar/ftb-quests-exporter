@@ -14,9 +14,15 @@ dependencies:
   '@tauri-apps/plugin-dialog':
     specifier: ~2
     version: 2.2.1
+  '@tauri-apps/plugin-fs':
+    specifier: ~2
+    version: 2.3.0
   '@tauri-apps/plugin-opener':
     specifier: ^2
     version: 2.2.6
+  ftbq-nbt:
+    specifier: ^1.4.1
+    version: 1.4.1
   lucide-react:
     specifier: ^0.511.0
     version: 0.511.0(react@18.3.1)
@@ -891,6 +897,12 @@ packages:
       '@tauri-apps/api': 2.5.0
     dev: false
 
+  /@tauri-apps/plugin-fs@2.3.0:
+    resolution: {integrity: sha512-G9gEyYVUaaxhdRJBgQTTLmzAe0vtHYxYyN1oTQzU3zwvb8T+tVLcAqCdFMWHq0qGeGbmynI5whvYpcXo5LvZ1w==}
+    dependencies:
+      '@tauri-apps/api': 2.5.0
+    dev: false
+
   /@tauri-apps/plugin-opener@2.2.6:
     resolution: {integrity: sha512-bSdkuP71ZQRepPOn8BOEdBKYJQvl6+jb160QtJX/i2H9BF6ZySY/kYljh76N2Ne5fJMQRge7rlKoStYQY5Jq1w==}
     dependencies:
@@ -1079,6 +1091,10 @@ packages:
     os: [darwin]
     requiresBuild: true
     optional: true
+
+  /ftbq-nbt@1.4.1:
+    resolution: {integrity: sha512-/AlP8kFXAHFEkHswqCrPO5CFBPD1wV9VtmvHfxZWJlOBF6Pgn4Mabis83Po1YWHARoIQxXwmqVoEO/ZevUwemA==}
+    dev: false
 
   /gensync@1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
