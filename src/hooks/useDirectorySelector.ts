@@ -3,12 +3,16 @@ import { open } from "@tauri-apps/plugin-dialog";
 import { readDir, readTextFile } from "@tauri-apps/plugin-fs";
 import { stripMinecraftFormatting } from "@/utils/stripMinecraftFormatting";
 import { parseSNBT } from "@/utils/parseSNBT";
+import { useSetAtom } from "jotai";
+import { titleAtom } from "@/atoms/titleAtom";
 
 // Reads the data.snbt file and retrieves the title of the quests
 const retrieveTitle = (data: string) => {};
 
 export const useDirectorySelector = () => {
   const [directoryString, setDirectoryString] = useState("");
+
+  const setTitleAtom = useSetAtom(titleAtom);
 
   const searchDirectory = async () => {
     const file: any = await open({
@@ -28,7 +32,7 @@ export const useDirectorySelector = () => {
     // console.log(parsedNbt);
 
     const cleanTitle = stripMinecraftFormatting(nbt.title);
-    console.log(cleanTitle);
+    setTitleAtom(cleanTitle);
 
     // const title = retrieveTitle(datasnbt);
   };

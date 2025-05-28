@@ -22,7 +22,7 @@ export const Alert = ({ isVisible = true, text, variant }: Props) => {
 
   return (
     isVisible && (
-      <div className="flex items-center space-x-3 border-2 border-slate-300 rounded-lg py-2.5 px-3 bg-black/15 text-sm text-slate-300">
+      <div className="w-fit flex items-center space-x-3 border-l-3 border-slate-300 py-2.5 px-3 bg-black/15 text-sm text-slate-300">
         <Icon className="w-5 h-5 outline-slate-300" />
         <div>{text}</div>
       </div>

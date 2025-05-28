@@ -2,15 +2,14 @@ import { Container } from "@/layout/Container";
 import "./App.css";
 import { DirectorySelector } from "@/components/DirectorySelector";
 import { Alert } from "@/components/Alert";
+import Spacer from "@/components/Spacer";
+import { DirectoryInfoBox } from "@/components/DirectoryInfoBox";
 
 function App() {
   return (
     <Container>
-      <div className="grid place-items-center h-full">
-        <h1 className="font-bold">Select file path</h1>
-
+      <div className="flex flex-col h-full">
         <form
-          className="row"
           onSubmit={(e) => {
             e.preventDefault();
           }}
@@ -22,11 +21,13 @@ function App() {
           />
           <DirectorySelector />
         </form>
+        <Spacer size="sm" />
         <Alert
           text="Please select the ftbquests directory from your minecraft world
           folder."
           variant="info"
         />
+        <DirectoryInfoBox />
       </div>
     </Container>
   );
