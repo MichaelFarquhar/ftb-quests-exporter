@@ -6,8 +6,29 @@ import { parseSNBT } from "@/utils/parseSNBT";
 import { useSetAtom } from "jotai";
 import { titleAtom } from "@/atoms/titleAtom";
 
+const getTitle = async (directoryString: string) => {
+  const datasnbt = await readTextFile(`${directoryString}\\data.snbt`);
+  const nbt: any = parseSNBT(datasnbt);
+  return stripMinecraftFormatting(nbt.title);
+};
+
+const getChapterGroups = async (directoryString: string) => {
+  const datasnbt = await readTextFile(
+    `${directoryString}\\chapter_groups.snbt`
+  );
+  const nbt: any = parseSNBT(datasnbt);
+
+  const chapterGroups = nbt.chapter_groups.map(
+    ({ id, title }: { id: string; title?: string }) =>
+      typeof title === "string"
+        ? { id, title: stripMinecraftFormatting(title) }
+        : { id }
+  );
+  console.log(chapterGroups);
+  // Placeholder for future implementation
+};
+
 // Reads the data.snbt file and retrieves the title of the quests
-const retrieveTitle = (data: string) => {};
 
 export const useDirectorySelector = () => {
   const [directoryString, setDirectoryString] = useState("");
@@ -24,17 +45,12 @@ export const useDirectorySelector = () => {
     const entries = await readDir(file);
     console.log(entries);
 
-    const datasnbt = await readTextFile(`${file}\\data.snbt`);
-    console.log(datasnbt);
-    const nbt: any = parseSNBT(datasnbt);
-    console.log(nbt);
-    // const parsedNbt: any = NBT.parseSNBT(nbt);
-    // console.log(parsedNbt);
+    // 1. Retrieve title from data.snbt
+    const title = await getTitle(file);
+    setTitleAtom(title);
 
-    const cleanTitle = stripMinecraftFormatting(nbt.title);
-    setTitleAtom(cleanTitle);
-
-    // const title = retrieveTitle(datasnbt);
+    // 2. Retrieve chapter groups
+    await getChapterGroups(file);
   };
 
   return { directoryString, searchDirectory };
